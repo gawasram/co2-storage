@@ -1,0 +1,15 @@
+[postgresql]
+postgresql_host = localhost
+postgresql_port = 5432
+postgresql_database = co2_storage
+postgresql_user = co2_storage
+postgresql_password = DATABASE_PASSWORD
+
+[log]
+logfile = logs/log
+
+[scheduler]
+scrape_ipfs_every = @every 5s
+
+[ipfs]
+ipfs_node = /ip4/127.0.0.1/tcp/5001

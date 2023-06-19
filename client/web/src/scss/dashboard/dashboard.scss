@@ -1,0 +1,196 @@
+@import "~@/src/scss/components/vue-json-pretty/styles.css";
+
+.dialog-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-content: center;
+	justify-content: space-between;
+	align-items: center;
+
+	&.code {
+		background: #000;
+		padding: 1em;
+		justify-content: flex-start;
+	}
+
+	.dialog-cell {
+		max-width: 95%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+
+		&.code-highlight {
+			color: coral;
+		}
+	}
+}
+
+.common-dashboard {
+	.body {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-content: center;
+		justify-content: center;
+		align-items: flex-start;
+
+		.body-group {
+			flex-basis: 50%;
+			max-width: 50%;
+			margin: 2rem 1rem;
+
+			.body-item {
+				text-align: left;
+				cursor: pointer;
+				padding: 1rem;
+				background-color: #171923;
+				border: 1px solid #2d3748;
+
+				display: flex;
+				flex-direction: row;
+				flex-wrap: nowrap;
+				align-content: center;
+				justify-content: space-between;
+				align-items: center;
+		
+				.body-item-content {
+					flex-basis: 50%;
+					max-width: 50%;
+
+					.body-item-title {
+						color: #38A169;
+						font-size: 1.25rem;
+						margin: .5rem 0;
+					}
+		
+					.body-item-description {
+						color: #A0AEC0;
+						font-size: 1rem;
+						font-weight: lighter;
+						margin: .5rem 0;
+					}
+				}
+
+				.body-item-icon {
+					flex-basis: 50%;
+					max-width: 10rem;
+
+					border-radius: 50%;
+					width: 10rem;
+					height: 10rem;
+					background-color: #fff;
+
+					img {
+						max-width: 10rem;
+						height: auto;
+						padding: 1rem;
+					}
+				}
+			}
+
+			.body-table {
+				padding: 1rem 0;
+				.cut {
+					max-width: 15rem;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+
+				.link {
+					cursor: pointer;
+				}
+
+				.in-line {
+					display: flex;
+					flex-direction: row;
+					flex-wrap: nowrap;
+					align-content: center;
+					justify-content: center;
+					align-items: center;
+
+					.icon-floating-left {
+						margin-left: -1.5rem;
+						padding-right: .5rem;
+					}
+
+					&.top-spacing-1 {
+						margin-top: 1rem;
+					}
+				}
+
+				.copy {
+					cursor: pointer;
+					margin-left: .25rem;
+				}
+
+				.record-size {
+					color: #999;
+					font-size: .85em;
+				}
+
+				.total-size {
+					float: right;
+					vertical-align: middle;
+					line-height: 2;
+					color: #ddd;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1024px) {
+		.body {
+			flex-direction: column;
+			flex-wrap: wrap;
+
+			.body-group {
+				flex-basis: 100%;
+				max-width: 100%;
+				width: 100%;
+				margin: 2rem 1rem;
+
+				.body-item {
+					flex-basis: 100%;
+					max-width: 100%;
+					width: calc(100% - 2rem);
+					margin: 1rem;
+				}
+
+				.body-table {
+					padding: 1rem;
+				}
+			}
+		}
+	}
+
+	@media (max-aspect-ratio: 13/9) and (orientation: portrait), (max-width: 800px) {
+		.body {
+			flex-direction: column;
+			flex-wrap: wrap;
+
+			.body-group {
+				flex-basis: 100%;
+				max-width: 100%;
+				width: 100%;
+				margin: 2rem 1rem;
+
+				.body-item {
+					flex-basis: 100%;
+					max-width: 100%;
+					width: calc(100% - 2rem);
+					margin: 1rem;
+				}
+
+				.body-table {
+					padding: 1rem;
+				}
+			}
+		}
+	}
+}
+
+.common-dashboard-dark {
+	@extend .common-dashboard !optional;
+}

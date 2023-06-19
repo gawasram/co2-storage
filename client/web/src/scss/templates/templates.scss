@@ -1,0 +1,181 @@
+@import "~@/node_modules/primeicons/primeicons.css";
+@import "~@/node_modules/primevue/resources/themes/arya-green/theme.css";
+@import "~@/node_modules/primevue/resources/primevue.min.css";
+
+@import "~@/node_modules/svelte-jsoneditor/themes/jse-theme-dark.css";
+
+.common-templates {
+	.heading {
+		color: #fff;
+		font-size: 1.7rem;
+		font-weight: normal;
+		text-transform: capitalize;
+		margin: 1rem;
+	}
+
+	.existing-schemas {
+		padding: 1rem;
+		.cut {
+			max-width: 15rem;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		.link {
+			cursor: pointer;
+		}
+
+		.in-line {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			align-content: center;
+			justify-content: center;
+			align-items: center;
+
+			.icon-floating-left {
+				margin-left: -1.5rem;
+				padding-right: .5rem;
+			}
+
+			.verified {
+				color: #008000;
+			}
+		}
+
+		.copy {
+			cursor: pointer;
+			margin-left: .25rem;
+		}
+	}
+
+	.schema-name {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-content: center;
+		align-items: center;
+
+		color: #fff;
+		margin: 1rem;
+
+		max-width: 49%;
+		width: 49%;
+		
+		.schema-name-input {
+			outline: none;
+			max-width: 100%;
+			width: 100%;
+
+			input {
+				max-width: 100%;
+				width: 100%;		
+			}
+		}
+	}
+
+	.schemas {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-content: flex-start;
+		align-items: flex-start;
+
+		padding: 1rem;
+		
+		.json-editor {
+			order: 0;
+			flex-basis: 50%;
+			max-width: 50%;
+//			max-height: calc(100vh - 64px);
+
+			.jse-contents {
+				overflow: auto;
+//				max-height: calc(100vh - 125px);
+			}
+
+			--jse-theme-color: #38a169;
+			--jse-theme-color-highlight: #158b4c;
+			--jse-button-primary-background: #38a169;
+			--jse-button-primary-background-highlight: #158b4c;
+			--itemIsActiveBG: #158b4c;
+			--borderFocusColor: #158b4c;
+		}
+
+		.form-editor {
+			order: 1;
+			flex-basis: 50%;
+			max-width: 50%;
+//			max-height: 100vh;
+//			overflow: auto;
+
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: center;
+
+			.form-container {
+				display: table;
+				margin-bottom: 1rem;
+				max-width: 100%;
+				width: 100%;
+				margin: 0 2rem;
+			}
+		}
+	}
+
+	.controls {
+		margin: 1rem;
+	}
+
+	@media (max-width: 1024px) {
+		.schema-name {
+			max-width: 95%;
+			width: 95%;
+		}
+	
+		.schemas {
+			flex-direction: column;
+				.json-editor {
+				flex-basis: 100%;
+				max-width: 100%;
+				width: 100%;
+			}
+	
+			.form-editor {
+				flex-basis: 100%;
+				max-width: 100%;
+				width: 100%;
+			}
+		}
+	}
+
+	@media (max-aspect-ratio: 13/9) and (orientation: portrait), (max-width: 800px) {
+		.schema-name {
+			max-width: 95%;
+			width: 95%;
+		}
+	
+		.schemas {
+			flex-direction: column;
+				.json-editor {
+				flex-basis: 100%;
+				max-width: 100%;
+				width: 100%;
+			}
+	
+			.form-editor {
+				flex-basis: 100%;
+				max-width: 100%;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.common-templates-dark {
+	@extend .common-templates !optional;
+}
